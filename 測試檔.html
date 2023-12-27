@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .image-container {
+      position: relative;
+    }
+
+    .image-container img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: opacity 1s;
+    }
+
+    .image-container img.hidden {
+      opacity: 0;
+    }
+
+    .image-container img.visible {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="image-container">
+    <img src="path/to/first-image.jpg" alt="First Image" class="visible">
+    <img src="path/to/second-image.jpg" alt="Second Image" class="hidden">
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var imageContainer = document.querySelector('.image-container');
+
+      imageContainer.addEventListener('click', function() {
+        var firstImage = document.querySelector('.image-container img.visible');
+        var secondImage = document.querySelector('.image-container img.hidden');
+
+        // 切换图片的可见性类
+        firstImage.classList.remove('visible');
+        firstImage.classList.add('hidden');
+
+        secondImage.classList.remove('hidden');
+        secondImage.classList.add('visible');
+      });
+    });
+  </script>
+</body>
+</html>
