@@ -1,15 +1,7 @@
-document.addEventListener('DOMContentLoaded', function() {
+  function swapImages() {
     var imageContainer = document.querySelector('.image-container');
+    var images = imageContainer.getElementsByTagName('img');
 
-    imageContainer.addEventListener('click', function() {
-      var firefox = document.querySelector('.image-container img.First');
-      var icefox = document.querySelector('.image-container img.Second');
-
-      // 切换图片的可见性类
-      firefox.classList.remove('First');
-      firefox.classList.add('Second');
-
-      icefox.classList.remove('Second');
-      icefox.classList.add('First');
-    });
-  });
+    // 交换两张图片的顺序
+    imageContainer.insertBefore(images[1], images[0]);
+  }
