@@ -6,16 +6,16 @@ html {
 }
 
 #firefox {
-  position: relative;
-  left: 850px;
-  top: 350px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
   transform: translate(-50%,-50%); 
   
 }
 #icefox{
-  position: relative;
-  left: 850px;
-  top: 350px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
   transform: translate(-50%,-50%); 
 }
 
@@ -34,17 +34,91 @@ html {
   transform: scale(1.1);
 }
 
-#lefttopblock{
+
+
+  /* 外層區塊的樣式 */
+/* 外層區塊的樣式 */
+.outer-block {
   border: 5px solid rgba(0, 0, 0, 0);
   background-color: rgba(0, 0, 0, 0.671);
-  height: 600px;
-  width: 550px;
+  height: 800px;
+  width: 650px;
   position: fixed;
   left: 70px;
-  top: 50px;
+  top: 60px;
 }
 
-h2{
-  position: absolute;
-  left: 50%;    
+/* 內層區塊的樣式 */
+.inner-block1 {
+  border: 5px solid rgb(5, 205, 255);
+  border-radius: 10px;
+  width: 720px;
+  height: 200px;
+ 
+  
+  /* 將內層區塊水平和垂直居中 */
+  margin: auto;
+  width: 95%; /* 或者使用固定的宽度，根据需要调整 */
+  
+}
+
+.inner-block2 {
+  border: 5px solid rgb(5, 205, 255);
+  border-radius: 10px;
+  width: 720px;
+  height: 200px;
+ 
+  /* 將內層區塊水平和垂直居中 */
+  margin: 10px;
+  width: 95%; /* 或者使用固定的宽度，根据需要调整 */
+}
+
+.inner-block3 {
+  border: 5px solid rgb(5, 205, 255);
+  border-radius: 10px;
+  width: 720px;
+  height: 300px;
+ 
+  
+  /* 將內層區塊水平和垂直居中 */
+  margin: 10px;
+  width: 95%; /* 或者使用固定的宽度，根据需要调整 */
+  
+}
+
+h2 {
+  text-align:center;
+  color: rgb(0, 204, 255);
+  font-size: 30px;
+}
+
+#icetype{
+  max-width: 100%; /* 確保圖片不超過容器的寬度 */
+  height: auto;
+  display: block;
+  margin: auto; /* 圖片水平居中 */
+}
+
+pre{
+  color: rgb(255, 255, 255);
+  font-size: 30px;
+  text-align: left;
+}
+
+.sex{
+  height: 40px;
+  width: auto;
+  vertical-align: text-bottom;
+}
+
+#ice{
+  color: rgb(255, 255, 255);
+  font-size: 30px;
+  text-align: center;
+}
+
+#types{
+  color: rgb(255, 255, 255);
+  font-size: 30px; 
+  text-align: left; 
 }
