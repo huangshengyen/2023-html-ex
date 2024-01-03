@@ -1,7 +1,30 @@
-  function swapImages() {
-    var imageContainer = document.querySelector('.image-container');
-    var images = imageContainer.getElementsByTagName('img');
+// script.js
 
-    // äº¤æ¢ä¸¤å¼ å›¾ç‰‡çš„é¡ºåº
-    imageContainer.insertBefore(images[1], images[0]);
-  }
+document.addEventListener('DOMContentLoaded', function () {
+  var movableImage = document.getElementById('icefox');
+  var isAnimationInProgress = false;
+
+  movableImage.addEventListener('click', function () {
+    if (!isAnimationInProgress) {
+      moveAndShrinkImage(movableImage, 200, 0.8); // «ü©wªº¥Ø?¦ì¸m©M?¤p¤ñ¨Ò¡A¥i¥H®ÚÕu»İ­n?¾ã
+    }
+  });
+});
+
+function moveAndShrinkImage(image, targetPosition, scaleRatio) {
+  var currentPosition = image.getBoundingClientRect().left;
+  var moveDistance = targetPosition - currentPosition;
+
+  // ?¸m?¦¡¡A????®ÄªG
+  image.style.transition = 'left 0.5s ease-in-out, transform 0.5s ease-in-out';
+  image.style.left = moveDistance + 'px';
+  image.style.transform = 'scale(' + scaleRatio + ')';
+
+  // ?©w????
+  isAnimationInProgress = true;
+
+  // ¦b???§ô¦Z¸Ñ???
+  setTimeout(function () {
+    isAnimationInProgress = false;
+  }, 500); // ?¨½ªº????ÉO??ªº???¤@­P
+}
